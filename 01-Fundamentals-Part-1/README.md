@@ -142,7 +142,7 @@ In JavaScript, every value belongs to one of two main categories: **Primitive** 
 
 ### 📚 Categories of Data Types
 
-- **Primitive Types**: Basic types 🧱
+- **Primitive Types**: Basic types; immutable 🧱
 - **Object Types**: Complex, mutable collections of properties 🏗️
 
 ---

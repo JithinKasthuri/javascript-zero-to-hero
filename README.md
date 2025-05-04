@@ -12,3 +12,16 @@ Following Topics are covered in this project - \
    - Logical Operators
    - `switch` statements
    - Expression vs Statements
+2. Javascript Fundamental - Part 2
+   - `strict` mode
+   - Functions
+   - Function Declaration vs Function Expression
+   - Arrow functions
+   - Argument vs Parameter
+   - Arrays and important methods
+   - Objects
+   - Dot vs bracket notation in objects
+   - Object methods
+   - `for` loop
+   - `break` and `continue` in for loop
+   - `while` loop
