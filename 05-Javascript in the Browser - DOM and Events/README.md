@@ -20,6 +20,7 @@
   });
   ```
 
+- In `querySelector`, when we mention class name , it should start with `.` ; when we mention id, it should start with `#`. For identifying an element with a specific id, we can use `getElementById`, and in that case we **don't** have to start with `#`
 - We can modify the css in javascript like below -
 
   ```js

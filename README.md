@@ -36,3 +36,9 @@ Following Topics are covered in this project - \
    - Guess My Number (Project)
      - `addEventListner`
      - Manipulating DOM with `querySelector`, `style`, `textContent`, `value`
+6. Modal Window (Project)
+   - `querySelectorAll`, `classList.add`, `classList.remove`, `classList.contains`
+   - `keydown`, `keypress`, and `keyup` events
+   - Event object in Event handlers
+7. Pig Game (Project)
+   - `classList.toggle`
