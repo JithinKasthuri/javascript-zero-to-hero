@@ -25,3 +25,14 @@ Following Topics are covered in this project - \
    - `for` loop
    - `break` and `continue` in for loop
    - `while` loop
+3. Developer Skills
+   - Prettier
+   - VS Code Setup
+   - Debugging
+   - Problem solving with ChatGPT
+4. Basic HTML&CSS
+5. Javascript in the Browser: DOM and Events
+   - DOM
+   - Guess My Number (Project)
+     - `addEventListner`
+     - Manipulating DOM with `querySelector`, `style`, `textContent`, `value`
