@@ -42,3 +42,6 @@ Following Topics are covered in this project - \
    - Event object in Event handlers
 7. Pig Game (Project)
    - `classList.toggle`
+8. Javascript - Behind The Scenes
+   - High level overview of Javascript
+   - JS Engine
