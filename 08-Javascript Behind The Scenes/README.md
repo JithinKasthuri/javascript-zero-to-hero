@@ -87,3 +87,60 @@
 
 - ![alt text](image.png)
 - ![alt text](image-1.png)
+
+## Hoisting
+
+- Hoisting Makes some types of variables accessible/usable in the code before they are actually declared. “Variables lifted to the top of their scope”.
+- Only declarations are hoisted, not initializations.
+- Key points -
+
+  | Keyword/Type         | Hoisted              | Initialized       | Access Before Declaration                    |
+  | -------------------- | -------------------- | ----------------- | -------------------------------------------- |
+  | `var`                | ✅ Yes               | ✅ As `undefined` | ✅ Allowed, but returns `undefined`          |
+  | `let`                | ✅ Yes               | ❌ No             | ❌ ReferenceError (Temporal Dead Zone)       |
+  | `const`              | ✅ Yes               | ❌ No             | ❌ ReferenceError (Temporal Dead Zone)       |
+  | Function Declaration | ✅ Yes               | ✅ Yes            | ✅ Fully accessible                          |
+  | Function Expression  | ✅ (only `var` part) | ❌ No             | ❌ TypeError (`undefined is not a function`) |
+
+- **TDZ**, or **Temporal Dead Zone**, is the period between: when a let or const variable is hoisted, and when it is actually declared (initialized) in your code.
+  During this time, any attempt to access the variable will result in a ReferenceError.
+- The Temporal Dead Zone helps avoid bugs and encourages cleaner code by:
+  1. Preventing the use of variables before they are safely initialized.
+  2. Enforcing block-scoping rules for let and const.
+
+## `window` Object in Js
+
+- In JavaScript, especially in browser environments, the `window` object is a global object that represents the browser window or tab. It acts as the top-level object for all JavaScript code running in the browser.
+- It is automatically available in the browser (no need to declare or import).
+- It represents the global scope.
+- All global variables, functions, and browser APIs (like alert(), setTimeout(), document, etc.) are properties or methods of the window object.
+- Global variables declared with `var` become properties of window. But `let` and `const` do not.
+
+  ```js
+  var x = 10;
+  console.log(window.x); // ✅ 10 (for var in global scope)
+
+  function greet() {
+    console.log("Hello!");
+  }
+
+  window.greet(); // ✅ "Hello!"
+  ```
+
+- In Node.js, there is no window object, because it's not running in a browser. Node uses `global` as the global object.
+
+## `this` Keyword
+
+- `this` keyword/variable: Special variable that is created for every execution context (every function).
+  Takes the value of (points to) the “owner” of the function in which the this keyword is used.
+- Its value depends on how a function is called, not where it’s defined.
+
+  | Situation                          | What `this` refers to                                         |
+  | ---------------------------------- | ------------------------------------------------------------- |
+  | In global scope (browser)          | `window` (global object)                                      |
+  | Inside a regular function          | `window` (in non-strict mode) or `undefined` (in strict mode) |
+  | Inside a method (object function)  | The object that owns the method                               |
+  | In an event handler (`el.onclick`) | The DOM element that triggered the event                      |
+  | In an arrow function               | `this` is **lexically bound** (inherits from the outer scope) |
+  | With `call`, `apply`, or `bind`    | You **manually specify** what `this` should be                |
+  | In class constructors/methods      | The instance of the class                                     |
