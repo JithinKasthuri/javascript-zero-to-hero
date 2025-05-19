@@ -45,3 +45,7 @@ Following Topics are covered in this project - \
 8. Javascript - Behind The Scenes
    - High level overview of Javascript
    - JS Engine
+   - Scope - Block Scope, Function Scope, Global Scope
+   - Hoisting, TDZ
+   - `this`, `window`
+   - `arguments` keyword in function

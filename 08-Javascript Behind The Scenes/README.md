@@ -35,7 +35,7 @@
 - JS has **Lexical Scoping** - Scoping is controlled by placement of functions and blocks in the code.
 - **Scope**: Space or environment in which a certain variable is declared (variable environment in case of functions). There is global scope, function scope, and block scope
 - **Scope of a variable**: Region of our code where a certain variable can be accessed.
-- **Global Scope\***: Variables declared outside any function or block are in the global scope and are accessible anywhere in your code.
+- **Global Scope**: Variables declared outside any function or block are in the global scope and are accessible anywhere in your code.
 
   ```js
   let globalVar = "I'm global!";
@@ -144,3 +144,51 @@
   | In an arrow function               | `this` is **lexically bound** (inherits from the outer scope) |
   | With `call`, `apply`, or `bind`    | You **manually specify** what `this` should be                |
   | In class constructors/methods      | The instance of the class                                     |
+
+- When we try to access a variable in the global scope, which is not defined, it will not throw an error, it will consider the variable to be `undefined`
+
+## `arguments` Keyword in Function
+
+- The **arguments** keyword is an array-like object available inside regular functions, representing all the arguments passed to that function, regardless of how many parameters are declared.
+- It is only available in regular (non-arrow) functions.
+- It contains all passed arguments (even extra ones).
+- It is not a real array, but can be converted to one using `Array.from()` or spread syntax ([...arguments]).
+
+  ```js
+  function sum() {
+    console.log(arguments);
+    let total = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      total += arguments[i];
+    }
+    return total;
+  }
+
+  console.log(sum(2, 4, 6)); // Output: 12
+  ```
+
+  ```js
+  const showArgs = () => {
+    console.log(arguments); // ❌ ReferenceError
+  };
+
+  showArgs(1, 2, 3);
+  ```
+
+  ```js
+  function printArgs() {
+    const argsArray = Array.from(arguments);
+    console.log(argsArray);
+  }
+  printArgs("a", "b", "c"); // ['a', 'b', 'c']
+  ```
+
+  ```js
+  function example1() {
+    console.log(arguments); // works
+  }
+
+  const example2 = (...args) => {
+    console.log(args); // preferred in modern JS
+  };
+  ```
